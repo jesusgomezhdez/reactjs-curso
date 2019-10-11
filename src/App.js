@@ -2,6 +2,33 @@ import React from 'react';
 import "./style/style.scss";
 import Curso from './Curso';
 
+const cursos = [
+  {
+    "title":"React desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/styles/16_9_medium/public/imagenes-cdn-edteam/2019-09/adobe-xd.png",
+    "price": 7000,
+    "profesor": "Beto quiroga"
+  },
+  {
+    "title":"React desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/styles/16_9_medium/public/imagenes-cdn-edteam/2019-09/adobe-xd.png",
+    "price": 7230,
+    "profesor": "Beto quiroga"
+  },
+  {
+    "title":"React desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/styles/16_9_medium/public/imagenes-cdn-edteam/2019-09/adobe-xd.png",
+    "price": 470,
+    "profesor": "Beto quiroga"
+  },
+  {
+    "title":"React desde cero",
+    "image": "https://drupal.ed.team/sites/default/files/styles/16_9_medium/public/imagenes-cdn-edteam/2019-09/adobe-xd.png",
+    "price": 730,
+    "profesor": "Beto quiroga"
+  }
+]
+
 const App = () => (
   <>
     <div className="main-banner img-container l-section" id="main-banner">
@@ -18,16 +45,11 @@ const App = () => (
     </div>
 
     <div className="ed-grid m-grid-3">
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      
+      {
+        cursos.map(c=> <Curso title={c.title} image={c.image} price={c.price} profesor={c.profesor}/>)
+      }  
     </div>
-
-  </>
+    </>
 )
 
 export default App;
